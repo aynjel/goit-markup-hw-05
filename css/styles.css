@@ -11,8 +11,8 @@
     --navybluemodal: #2E2F4266;
     --grey: #2E2F42B2;
     --diary: #FCFCFC;
-    --transition: 250ms ease-in-out;
-    /* --animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+    --transition-duration: 1s;
+    --animation-timing-function: cubic-bezier(0, .76, .18, 1);
 }
 
 body {
@@ -489,13 +489,16 @@ main {
     flex-direction: column;
     background: var(--white);
     border: 1px solid var(--cornflower);
+    transition: box-shadow var(--transition-duration);
+}
+
+.portfolio-list-item:hover{
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
 }
 
 .portfolio-list-item-figure{
     position: relative;
     overflow: hidden;
-    /* width: 100%;
-    height: 200px; */
 }
 
 .portfolio-list-item-figure img{
@@ -511,7 +514,8 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--iris);
+    background: rgba(61, 76, 237, 0.8);
+    border-radius: 4px 4px 0px 0px;
     padding: 0 24px;
     color: var(--white);
     text-align: left;
@@ -519,22 +523,14 @@ main {
     justify-content: flex-start;
     align-items: center;
     line-height: 24px;
-    transition: transform 1s ease-in-out;
+    transition: transform var(--transition-duration) var(--animation-timing-function);
     transform: translateY(100%);
+    will-change: transform;
 }
 
 .portfolio-list-item:hover figcaption{
     transform: translateY(0%);
 }
-
-/* .portfolio-list-item  */
-
-/* .portfolio-list-item:hover{
-    border: 1px solid var(--cloud);
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-} */
 
 .portfolio-list-item img{
     width: 100%;
@@ -646,3 +642,75 @@ main {
 .footer-social-item a svg{
     fill: var(--white);
 }
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--navybluemodal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 1;
+    pointer-events: auto;
+    transition-property: visibility, opacity, transform;
+    transition-duration: var(--animation-timing-function);
+    transform: none;
+}
+
+.modal.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+}
+
+.modal.is-hidden .modal-content{
+    transform: scale(0.95)
+}
+
+.modal-content{
+    width: 100%;
+    max-width: 528px;
+    height: 580px;
+    margin: 0 30px;
+    background: var(--white);
+    border-radius: 4px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    transform: none;
+    transition: transform var(--transition-duration) var(--animation-timing-function);
+}
+
+.modal-close{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+}
+
+.modal-close:hover{
+    background: var(--navyblue);
+}
+
+.modal-close svg{
+    fill: var(--navyblue);
+    transition: fill 0.1s ease-in-out;
+}
+
+.modal-close:hover svg{
+    fill: var(--white);
+}
+
