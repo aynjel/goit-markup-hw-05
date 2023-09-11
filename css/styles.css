@@ -688,9 +688,9 @@ main {
 }
 
 .modal-content{
-    width: 100%;
-    max-width: 528px;
-    height: 580px;
+    width: 408px;
+    height: 584px;
+    max-height: 100%;
     margin: 0 30px;
     background: var(--white);
     border-radius: 4px;
@@ -703,8 +703,8 @@ main {
 
 .modal-close{
     position: absolute;
-    top: 0;
-    left: 100%;
+    top: 20px;
+    right: 20px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -713,11 +713,12 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--white);
+    background: var(--cornflower);
+    border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 .modal-close:hover{
-    background: var(--navyblue);
+    background: var(--cloud);
 }
 
 .modal-close svg{
@@ -726,6 +727,6 @@ main {
 }
 
 .modal-close:hover svg{
-    fill: var(--white);
+    fill: var(--iris);
 }
 
