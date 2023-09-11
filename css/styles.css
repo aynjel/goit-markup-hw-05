@@ -291,7 +291,7 @@ main {
 .teams-container{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px 80px;
+    padding: 80px 20px;
 }
 
 .teams-container h2{
