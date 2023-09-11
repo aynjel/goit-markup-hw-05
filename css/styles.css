@@ -11,7 +11,7 @@
     --navybluemodal: #2E2F4266;
     --grey: #2E2F42B2;
     --diary: #FCFCFC;
-    --transition-duration: 1s;
+    --transition-duration: 250ms;
     --animation-timing-function: cubic-bezier(0, .76, .18, 1);
 }
 
@@ -74,7 +74,7 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2px 0px;
+    padding: 0 20px;
 }
 
 .header-nav{
@@ -112,25 +112,30 @@ img{
 .nav-lists li::after{
     content: "";
     position: absolute;
-    bottom: -20px;
+    bottom: -19px;
     left: 0;
     width: 0%;
     height: 4px;
     border-radius: 2px;
     background: var(--iris);
+    transition: width var(--transition-duration) var(--animation-timing-function);
 }
 
-.nav-lists li:hover::after{
+.nav-lists li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--navyblue);
+    transition: color var(--transition-duration) var(--animation-timing-function);
+}
+
+.nav-lists li:hover a, .nav-lists li:hover::after {
+    color: var(--iris);
     width: 100%;
 }
 
-.nav-lists li a{
-    font-weight: 500;
-    color: var(--navyblue);
-}
-
-.nav-lists li a:hover{
+.nav-lists li.active a, .nav-lists li.active::after {
     color: var(--iris);
+    width: 100%;
 }
 
 .header-address {
@@ -142,6 +147,7 @@ img{
 .header-address a {
     font-style: normal;
     color: var(--navyblue);
+    transition: color var(--transition-duration) var(--animation-timing-function);
 }
 
 .header-address a:hover {
@@ -186,12 +192,11 @@ main {
     color: var(--white);
     background: var(--iris);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    transition: all 0.1s ease-in-out;
+    transition: all var(--transition-duration) var(--animation-timing-function);
 }
 
 .hero-container button:hover {
     background: var(--ocean);
-    color: var(--white);
 }
 
 .hero-container button:active {
@@ -205,14 +210,14 @@ main {
 .about-container{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 0px;
+    padding: 80px 20px;
 }
 
 .about-lists{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .about-list-item {
@@ -252,7 +257,7 @@ main {
 .services-container{
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding: 0 20px 80px;
 }
 
 .services-container h2{
@@ -286,7 +291,7 @@ main {
 .teams-container{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 0px;
+    padding: 0 20px 80px;
 }
 
 .teams-container h2{
@@ -371,9 +376,14 @@ main {
     height: 100%;
     background: var(--iris);
     border-radius: 50%;
+    transition: all var(--transition-duration) var(--animation-timing-function);
 }
 
 .teams-social-list li a:hover{
+    background: var(--ocean);
+}
+
+.teams-social-list li a:active{
     background: var(--green);
 }
 
@@ -388,7 +398,7 @@ main {
 .customers-container{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 0px;
+    padding: 80px 20px;
 }
 
 .customers-container h2{
@@ -415,7 +425,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: border-color 0.1s ease-in-out;
+    transition: all var(--transition-duration) var(--animation-timing-function);
 }
 
 .customers-list-item:hover{
@@ -424,7 +434,7 @@ main {
 
 .customers-list-item svg{
     fill: var(--lightslate);
-    transition: fill 0.1s ease-in-out;
+    transition: all var(--transition-duration) var(--animation-timing-function);
 }
 
 .customers-list-item:hover svg{
@@ -438,7 +448,7 @@ main {
 .portfolio-container{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 0px;
+    padding: 60px 20px;
 }
 
 .portfolio-filter-lists{
@@ -457,7 +467,7 @@ main {
     color: var(--iris);
     border: 1px solid var(--cornflower);
     background: var(--cloud);
-    transition: all 0.3s ease-in-out;
+    transition: all var(--transition-duration) var(--animation-timing-function);
 }
 
 .filter-list-item .filter-buttons:hover {
@@ -479,7 +489,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     flex-wrap: wrap;
     padding: 40px 0px;
 }
@@ -514,7 +524,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(61, 76, 237, 0.8);
+    background: var(--iris);
     border-radius: 4px 4px 0px 0px;
     padding: 0 24px;
     color: var(--white);
@@ -568,7 +578,7 @@ main {
 .footer-container{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 0px;
+    padding: 80px 20px;
 }
 
 .footer-lists{
@@ -633,9 +643,14 @@ main {
     align-items: center;
     background: var(--iris);
     border-radius: 50%;
+    transition: all var(--transition-duration) var(--animation-timing-function);
 }
 
 .footer-social-item a:hover{
+    background: var(--ocean);
+}
+
+.footer-social-item a:active{
     background: var(--green);
 }
 
@@ -707,7 +722,7 @@ main {
 
 .modal-close svg{
     fill: var(--navyblue);
-    transition: fill 0.1s ease-in-out;
+    transition: fill var(--transition-duration) var(--animation-timing-function);
 }
 
 .modal-close:hover svg{
