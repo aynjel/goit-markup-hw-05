@@ -112,7 +112,7 @@ img{
 .nav-lists li::after{
     content: "";
     position: absolute;
-    bottom: -19px;
+    bottom: -17px;
     left: 0;
     width: 0%;
     height: 4px;
@@ -176,6 +176,7 @@ main {
 }
 
 .hero-container h1 {
+    font-family: 'Roboto', sans-serif;
     font-size: 56px;
     font-style: normal;
     font-weight: 700;
@@ -261,6 +262,7 @@ main {
 }
 
 .services-container h2{
+    font-family: 'Roboto', sans-serif;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -295,6 +297,7 @@ main {
 }
 
 .teams-container h2{
+    font-family: 'Roboto', sans-serif;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -402,6 +405,7 @@ main {
 }
 
 .customers-container h2{
+    font-family: 'Roboto', sans-serif;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -647,7 +651,7 @@ main {
 }
 
 .footer-social-item a:hover{
-    background: var(--ocean);
+    background: var(--green);
 }
 
 .footer-social-item a:active{
