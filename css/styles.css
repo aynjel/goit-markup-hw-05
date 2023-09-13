@@ -719,18 +719,19 @@ main {
     align-items: center;
     background: var(--cornflower);
     border: 1px solid rgba(0, 0, 0, 0.10);
+    transition: background-color var(--transition-duration) var(--animation-timing-function), color var(--transition-duration) var(--animation-timing-function);
 }
 
 .modal-close:hover{
-    background: var(--cloud);
+    background-color: var(--ocean);
+    color: var(--white);
 }
 
 .modal-close svg{
-    fill: var(--navyblue);
+    fill: currentColor;
     transition: fill var(--transition-duration) var(--animation-timing-function);
 }
 
 .modal-close:hover svg{
-    fill: var(--iris);
+    fill: var(--white);
 }
-
